@@ -1,0 +1,17 @@
+Configuration:
+  name: logConfig
+  Properties:
+    Property:
+      name: log_pattern
+      value: "%d{yyy-MM-dd hh:MM:ss} %-5level--- %C{1} (%L) - %m%n%ex"
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${log_pattern}
+  Loggers:
+    Root:
+      level: INFO
+      AppenderRef:
+        - ref: Console_Appender
